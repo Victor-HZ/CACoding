@@ -25,6 +25,7 @@ public class ClearInteractor implements ClearInputBoundary {
                 usernamesSuccessfullyDeleted.add(username);
             }
         }
+        userDataAccessObject.finishDelete();
         ClearOutputData clearOutputData = new ClearOutputData(usernamesSuccessfullyDeleted, false);
         clearPresenter.prepareSuccessView(clearOutputData);
     }
