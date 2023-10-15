@@ -1,6 +1,40 @@
 package interface_adapter.clear_users;
 
-// TODO Complete me
+import com.sun.org.apache.xerces.internal.xs.StringList;
+import interface_adapter.ViewModel;
 
-public class ClearViewModel {
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
+
+public class ClearViewModel extends ViewModel {
+    public final String TITLE_LABEL = "Clear View";
+
+    public static final String OK_BUTTON_LABEL = "OK";
+
+    private ClearState state = new ClearState();
+
+    public ClearViewModel(){
+        super("Clear");
+    }
+
+    public void setState(ClearState state){
+        this.state = state;
+    }
+
+    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+
+    @Override
+    public void firePropertyChanged() {
+        support.firePropertyChange("state", null, this.state);
+    }
+
+    @Override
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        support.addPropertyChangeListener(listener);
+    }
+
+    public ClearState getState(){
+        return this.state;
+    }
 }
