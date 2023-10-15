@@ -102,4 +102,9 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface, 
         accounts.remove(user);
     }
 
+    @Override
+    public void finishDelete() {
+        this.save();
+    }
+
 }
