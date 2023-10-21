@@ -1,7 +1,8 @@
 package interface_adapter.clear_users;
 
-import com.sun.org.apache.xerces.internal.xs.StringList;
 import use_case.clear_users.*;
+
+import java.util.ArrayList;
 
 public class ClearController {
 
@@ -10,7 +11,7 @@ public class ClearController {
         this.clearUseCaseInteractor = clearUseCaseInteractor;
     }
 
-    public void execute(StringList usernames) {
+    public void execute(ArrayList<String> usernames) {
         ClearInputData clearInputData = new ClearInputData(usernames);
 
         clearUseCaseInteractor.execute(clearInputData);

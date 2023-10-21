@@ -1,16 +1,16 @@
 package use_case.clear_users;
 
-import com.sun.org.apache.xerces.internal.xs.StringList;
+import java.util.ArrayList;
 
 public class ClearInputData {
 
-    final private StringList usernames;
+    final private ArrayList<String> usernames;
 
-    public ClearInputData(StringList usernames){
+    public ClearInputData(ArrayList<String> usernames){
         this.usernames = usernames;
     }
 
-    StringList getUsernames(){
+    ArrayList<String> getUsernames(){
         return usernames;
     }
 

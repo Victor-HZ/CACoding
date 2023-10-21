@@ -1,6 +1,5 @@
 package interface_adapter.clear_users;
 
-import com.sun.org.apache.xerces.internal.xs.StringList;
 import interface_adapter.ViewModel;
 
 import java.beans.PropertyChangeListener;

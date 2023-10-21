@@ -1,18 +1,19 @@
 package use_case.clear_users;
 
-import com.sun.org.apache.xerces.internal.xs.StringList;
 import entity.User;
 
+import java.util.ArrayList;
+
 public class ClearOutputData {
-    private final StringList usernames;
+    private final ArrayList<String> usernames;
     private boolean useCaseFaild;
 
-    public ClearOutputData(StringList usernames, boolean useCaseFaild){
+    public ClearOutputData(ArrayList<String> usernames, boolean useCaseFaild){
         this.usernames = usernames;
         this.useCaseFaild = useCaseFaild;
     }
 
-    public StringList getUsernames() {
+    public ArrayList<String> getUsernames() {
         return usernames;
     }
 }

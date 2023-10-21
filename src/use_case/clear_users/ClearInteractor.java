@@ -1,7 +1,6 @@
 package use_case.clear_users;
 
-import com.sun.org.apache.xerces.internal.xs.StringList;
-import entity.User;
+import java.util.ArrayList;
 
 public class ClearInteractor implements ClearInputBoundary {
     final ClearUserDataAccessInterface userDataAccessObject;
@@ -15,9 +14,10 @@ public class ClearInteractor implements ClearInputBoundary {
 
     @Override
     public void execute(ClearInputData clearInputData) {
-        StringList usernames = clearInputData.getUsernames();
-        StringList usernamesSuccessfullyDeleted = null;
-        for(Object username : usernames){
+        ArrayList<String> usernames = clearInputData.getUsernames();
+        usernames = userDataAccessObject.getUsernames();
+        ArrayList<String> usernamesSuccessfullyDeleted = new ArrayList<>();
+        for(String username : usernames){
             if(!userDataAccessObject.existsByName((String)username)){
                 clearPresenter.prepareFailedView(username + ": Account does not exist.");
             } else {

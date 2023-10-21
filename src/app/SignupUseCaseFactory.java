@@ -1,6 +1,5 @@
 package app;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import interface_adapter.clear_users.ClearController;
 import interface_adapter.clear_users.ClearPresenter;
 import interface_adapter.clear_users.ClearViewModel;

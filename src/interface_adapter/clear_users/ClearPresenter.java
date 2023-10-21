@@ -4,6 +4,8 @@ import interface_adapter.ViewManagerModel;
 import use_case.clear_users.ClearOutputBoundary;
 import use_case.clear_users.ClearOutputData;
 
+import javax.swing.*;
+
 public class ClearPresenter implements ClearOutputBoundary {
 
     private final ClearViewModel clearViewModel;
@@ -24,6 +26,12 @@ public class ClearPresenter implements ClearOutputBoundary {
 
         this.viewManagerModel.setActiveView(clearViewModel.getViewName());
         this.viewManagerModel.firePropertyChanged();
+
+        String message = "";
+        for(String user : response.getUsernames()){
+            message = message + user + '\n';
+        }
+        JOptionPane.showMessageDialog(null, message);
     }
 
     @Override

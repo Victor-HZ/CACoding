@@ -1,9 +1,9 @@
 package interface_adapter.clear_users;
 
-import com.sun.org.apache.xerces.internal.xs.StringList;
+import java.util.ArrayList;
 
 public class ClearState {
-    private StringList usernames;
+    private ArrayList<String> usernames;
     private String usernameError = null;
 
     public ClearState(ClearState copy){
@@ -13,13 +13,13 @@ public class ClearState {
 
     public ClearState(){}
 
-    public StringList getUsernames(){return usernames;}
+    public ArrayList<String> getUsernames(){return usernames;}
 
     public String getUsernameError() {
         return usernameError;
     }
 
-    public void setUsernames(StringList usernames){
+    public void setUsernames(ArrayList<String> usernames){
         this.usernames = usernames;
     }
 
